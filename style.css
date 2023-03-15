@@ -38,10 +38,12 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8%;
 }
 h2 {
-   text-align: center;
+   text-align: right;
+   font-size: medium;
+   margin-right: 4%;
+   font-style: italic;
 }
 footer {
     background-color: #e8e2da;
@@ -49,4 +51,5 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    font-size: larger;
 }
