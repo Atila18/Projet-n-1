@@ -53,3 +53,27 @@ footer {
     width: 100%;
     font-size: larger;
 }
+ div .bouton {
+    display: flex;
+    border-radius: 100%;
+    background-color: #c8bcab;
+    color: white;
+    width: 42px;
+    height: 42px;
+    margin: -8%;
+}
+div .bouton p {
+    display: flex;
+    font-size: 1.25rem;
+}
+.gauche {
+    display: flex;
+    justify-content: flex-start;
+}
+.sous-tache {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 70%;
+    height: 17px;
+    margin-left: 32px;
+    position: fixed;
+}
