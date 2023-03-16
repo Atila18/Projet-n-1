@@ -40,6 +40,10 @@ div {
     align-items: center;
     margin-top: 8%;
 }
+section {
+    display: flex;
+    justify-content: space-between;
+}
 h2 {
    text-align: center;
 }
