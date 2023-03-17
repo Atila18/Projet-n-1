@@ -41,10 +41,7 @@ div.gauche {
 	position: relative;
 	padding: 1rem;
 }
-section {
-    display: flex;
-    justify-content: space-between;
-}
+
 h2 {
 	text-align: right;
 	font-size: medium;
@@ -86,6 +83,9 @@ div .bouton p {
 	width: 70%;
 	margin: 0.5rem 32px;
 	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 @media screen and (min-width: 600px) {
