@@ -41,10 +41,10 @@ div.gauche {
 	position: relative;
 	padding: 1rem;
 }
-section {
+/* section {
     display: flex;
     justify-content: space-between;
-}
+} */
 h2 {
 	text-align: right;
 	font-size: medium;
