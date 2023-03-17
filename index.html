@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Projet n°1</title>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Lien vers CSS croix supprimer -->
+		<link rel="stylesheet" href="gg-close.css" />
 	</head>
 	<body>
 		<nav>
@@ -22,48 +24,51 @@
 				</li>
 			</ul>
 		</nav>
-		<h2>Tâches à faire</h2>
-
-		<div class="gauche">
-			<div class="bouton">
-				<p>+</p>
-			</div>
-			<div class="sous-tache">
-				<p>Tâche n°1</p>
-			</div>
-			<div class="sous-tache">
-				<p>Tâche n°2</p>
-			</div>
-			<div class="sous-tache">
-				<p>Tâche n°3</p>
-			</div>
-		</div>
-		<div class="grid">
-			<section>
-				<h2>Tâches en cours</h2>
-				<div class="gauche colonne">
-					<div class="bouton2">
-						<p>⚠</p>
-					</div>
-					<div class="sous-tache">
-						<p>Tâche n°4</p>
-					</div>
+			<h2>Tâches à faire</h2>
+			<div class="gauche">
+				<div class="bouton">
+					<p>+</p>
 				</div>
-			</section>
-			<section>
-				<h2>Tâches terminées</h2>
-				<div class="gauche colonne">
-					<div class="bouton">
-						<p>-</p>
-					</div>
-					<div class="sous-tache">
-						<p>Tâche n°6</p>
-					</div>
+				<div class="sous-tache">
+					<p>Tâche n°1</p>
+					<div class="gg-close"></div>
 				</div>
-			</section>
-		</div>
+				<div class="sous-tache">
+					<p>Tâche n°2</p>
+					<div class="gg-close"></div>
+				</div>
+				<div class="sous-tache">
+					<p>Tâche n°3</p>
+					<div class="gg-close"></div>
+				</div>
+				<div class="grid">
+					<section>
+						<h2>Tâches en cours</h2>
+						<div class="gauche colonne">
+							<div class="bouton2">
+								<p>⚠</p>
+							</div>
+							<div class="sous-tache">
+								<p>Tâche n°4</p>
+								<div class="gg-close"></div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>Tâches terminées</h2>
+						<div class="gauche colonne">
+							<div class="bouton">
+								<p>-</p>
+							</div>
+							<div class="sous-tache">
+								<p>Tâche n°6</p>
+							</div>
+						</div>
+					</section>
+				</div>
 		<footer>
-			<p>©MAAC - 2023</p>
+			<p>© MAAC - 2023</p>
 		</footer>
+		<script src="script.js"></script>
 	</body>
 </html>
