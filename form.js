@@ -19,8 +19,9 @@ function hideModal() {
 // Faire apparaitre les valeurs du Form dans le HTML
 const form = document.querySelector("#form");
 const taskContainer = document.querySelector("#task-container");
+// const modalContainer = document.querySelector(".modal-container");
 
-form.addEventListener("submit", function (event) {
+function addTask(event) {
   event.preventDefault();
 
   // Récupère les valeurs des champs du formulaire
@@ -28,12 +29,13 @@ form.addEventListener("submit", function (event) {
   const dateValue = document.querySelector("#date").value;
   const descriptionValue = document.querySelector("#description").value;
 
-  //Nouvelle div pour la tâche
-  const taskDiv = document.createElement("div");
-  taskDiv.classList.add("task-container");
+  if ((todoInputValue && dateValue) || descriptionValue) {
+    //Nouvelle div pour la tâche
+    const taskDiv = document.createElement("div");
+    taskDiv.classList.add("task-container");
 
-  // Ajoute les valeurs des champs du formulaire à la nouvelle div
-  function addTask() {
+    // Ajoute les valeurs des champs du formulaire à la nouvelle div
+
     const newTodo = document.createElement("h2");
     newTodo.innerHTML = todoInputValue;
     newTodo.classList.add("newTodo");
@@ -52,9 +54,7 @@ form.addEventListener("submit", function (event) {
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
   }
-
-  form.reset();
-});
+}
 
 //
 //
@@ -66,7 +66,10 @@ modalBtn.addEventListener("click", function () {
 });
 
 //écouteur d'événement sur le bouton "OK" pour masquer la modal
-closeBtn.addEventListener("click", hideModal);
+closeBtn.addEventListener("click", function (event) {
+  addTask(event);
+  hideModal();
+});
 
 //écouteurs d'événement sur l'overlay et le formulaire pour masquer la modal
 modalTrigger.forEach(function (trigger) {
