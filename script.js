@@ -6,3 +6,4 @@ deleteBtn.addEventListener("click", function () {
   myTask.remove();
   deleteBtn.remove();
 });
+
