@@ -1,10 +1,9 @@
-/* Mise en forme du formulaire */
-
+/* Mise en forme du formulaire */ /*police de google font pour le form*/
 .form-container {
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 320px;
 }
 
 input {
@@ -13,17 +12,47 @@ input {
 }
 
 textarea {
-  height: 200px;
+  /* Faire un overflow sur le textarea*/
+  resize: none;
 }
 
 /* Btn = ajout de tache */
-.modal-btn {
+#add-btn {
+  position: absolute;
+  z-index: 1;
+  left: 2%;
+  top: 21%;
   padding: 10px 14px;
-  font-size: 18px;
-  margin: 20px auto;
-  display: block;
-  min-width: 150px;
+  font-size: 24px;
+  font-weight: bolder;
+
+  margin: 2px;
   cursor: pointer;
+  border-radius: 100%;
+  border: none;
+  background-color: #c8bcab;
+  color: #fff;
+}
+
+/* Btn = supp tache terminées */
+#supp-task {
+  position: absolute;
+  z-index: 1;
+  left: 3%;
+  bottom: 22%;
+  padding: 10px 14px;
+  font-size: 24px;
+  font-weight: bolder;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 100%;
+  border: none;
+  background-color: #c8bcab;
+  color: #fff;
+}
+
+section {
+  display: flex;
 }
 
 /* LE MODAL */
@@ -31,6 +60,7 @@ textarea {
 
 .modal-container {
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100vw;
   height: 100vh;
@@ -51,7 +81,7 @@ textarea {
 /* style du MODAL*/
 
 .modal {
-  width: 60%;
+  width: 70%;
   max-width: 400px;
   min-width: 200px;
   padding: 12px;
@@ -79,24 +109,41 @@ textarea {
 }
 
 /* Mise en forme temporaire des tâches ajoutées */
+/* Ajout des taches */
 
-ul {
-  list-style: none;
+.task-container {
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.newUl {
+  min-height: 60px;
+  max-height: 70px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   font-size: 1.5rem;
   margin-bottom: 1rem;
   list-style-type: none;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: scroll;
+  text-overflow: hidden;
+}
+
+.newDate {
+  grid-column: 2/4;
+  grid-row: 1/2;
 }
 
 .newDescription {
-  grid-column: 1/4;
+  grid-column: 1/5;
   grid-row: 2/3;
+}
+
+.task-container > h2,
+p {
+  font-size: 16px;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px;
 }

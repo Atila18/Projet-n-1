@@ -20,6 +20,11 @@ body {
   margin: 0;
 }
 
+section {
+  display: flex;
+  justify-content: center;
+}
+
 nav ul {
   display: flex;
   flex-direction: column;
@@ -37,25 +42,12 @@ nav ul li a {
 div.gauche {
   background-color: #e8e2da;
   min-height: 150px;
-  margin: 0 7%;
+  max-height: 150px;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   position: relative;
-  padding: 1rem;
-}
-.task-container {
-  background-color: #e8e2da;
-  width: 85%;
-  height: 150px;
-  margin-left: 7%;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8%;
+  padding: 1rem 1rem 1rem 2rem;
+  overflow: scroll;
+  text-overflow: hidden;
 }
 
 h2 {
@@ -74,34 +66,16 @@ footer {
   width: 100%;
   font-size: larger;
 }
+
 div .bouton2 p {
   color: transparent;
 }
-div .bouton {
-  display: flex;
-  border-radius: 100%;
-  background-color: #c8bcab;
-  color: white;
-  width: 42px;
-  height: 42px;
-  transform: translate(-50%, -50%);
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 0;
-}
-div .bouton p {
-  font-size: 1.25rem;
-}
+
 .sous-tache {
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 70%;
-  margin: 0.5rem 32px;
+  width: 85%;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 600px) {

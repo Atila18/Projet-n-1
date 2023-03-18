@@ -51,6 +51,8 @@ function addTask(event) {
     newDescription.classList.add("newDescription");
     taskDiv.appendChild(newDescription);
 
+    //ajout du bouton supp gg-close
+
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
   }
