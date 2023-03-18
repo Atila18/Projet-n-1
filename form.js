@@ -89,3 +89,4 @@ modalBtn.addEventListener("click", function () {
 document.querySelector(".modal-btn").addEventListener("click", function () {
   showModal();
 });
+
