@@ -95,7 +95,25 @@ div .bouton2 p {
     width: 60%;
     padding-right: 15px;
   }
-
+  h2 {
+    text-align: right;
+    font-size: medium;
+    margin-right: 7%;
+    margin-bottom: -4px;
+    font-style: italic;
+  }
+  div.gauche {
+    width: auto;
+    margin: 0 4%;
+  }
+  div .bouton {
+    display: flex;
+    border-radius: 100%;
+    background-color: #c8bcab;
+    color: white;
+    width: 42px;
+    height: 42px;
+  }
   footer {
     background-color: #e8e2da;
     padding: 0;
@@ -104,38 +122,44 @@ div .bouton2 p {
     width: 100%;
     font-size: larger;
   }
-
-  #task-container {
-    margin-bottom: 50px;
+  div .bouton p {
+    display: flex;
+    font-size: 1.25rem;
+  }
+  div .bouton2 {
+    display: flex;
+    border-radius: 100%;
+    background-color: #c8bcab;
+    color: white;
+    width: 42px;
+    height: 42px;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  div .bouton2 p {
+    display: flex;
+    font-size: 1.25rem;
+    color: white;
   }
 
-  #section-2-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    height: 300px;
-  }
-  #en-cours {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  #terminees {
-    grid-column: 2/3;
-    grid-row: 1/2;
+  div.grid {
+    display: flex;
   }
 
-  div.gauche {
-    margin-top: 1%;
-    padding-bottom: 26px;
-    min-height: 150px;
-    max-height: 220px;
-    overflow: auto;
+  div.grid section {
+    width: 50%;
   }
 
-  #task-container {
-    margin-bottom: 2%;
+  div.grid section div.gauche {
+    width: auto;
+    margin: 0 8%;
   }
-  .gauche {
-    height: 200px;
+
+  div.grid section h2 {
+    margin-right: 16%;
   }
 }

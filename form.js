@@ -4,7 +4,6 @@ const modalContainer = document.querySelector(".modal-container");
 const modalTrigger = document.querySelectorAll(".modal-trigger");
 const modalBtn = document.querySelector(".modal-btn");
 const closeBtn = document.querySelector(".close-modal");
-// const closeTask = document.querySelector(".close-tache");
 
 // Fonction pour afficher la modal
 function showModal() {
@@ -20,6 +19,7 @@ function hideModal() {
 // Faire apparaitre les valeurs du Form dans le HTML
 const form = document.querySelector("#form");
 const taskContainer = document.querySelector("#task-container");
+// const modalContainer = document.querySelector(".modal-container");
 
 function addTask(event) {
   event.preventDefault();
@@ -51,7 +51,9 @@ function addTask(event) {
     newDescription.classList.add("newDescription");
     taskDiv.appendChild(newDescription);
 
-    // // Ajoute la nouvelle div à la div taskContainer
+    //ajout du bouton supp gg-close
+
+    // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
   }
 }
@@ -86,14 +88,4 @@ modalBtn.addEventListener("click", function () {
 //écouteur d'événement sur le bouton "Ajouter" pour réafficher la modal
 document.querySelector(".modal-btn").addEventListener("click", function () {
   showModal();
-});
-
-//
-//écouteur d'événement sur le bouton "-" pour supprimer les liste
-const finishTask = document.querySelector("e");
-const deleteFinish = document.querySelector(".gg-close");
-
-deleteFinish.addEventListener("click", function () {
-  finishTask.remove();
-  deleteFinish.remove();
 });
