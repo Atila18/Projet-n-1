@@ -51,10 +51,19 @@ function addTask(event) {
     newDescription.classList.add("newDescription");
     taskDiv.appendChild(newDescription);
 
-    //ajout du bouton supp gg-close
+    // Ajouter un bouton de suppression pour la nouvelle tâche créée
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "";
+    deleteBtn.classList.add("gg-close");
+    taskDiv.appendChild(deleteBtn);
 
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
+
+    //ecouteur d'event pour le bouton supp
+    deleteBtn.addEventListener("click", function () {
+      taskDiv.remove();
+    });
   }
 }
 
@@ -76,13 +85,6 @@ closeBtn.addEventListener("click", function (event) {
 //écouteurs d'événement sur l'overlay et le formulaire pour masquer la modal
 modalTrigger.forEach(function (trigger) {
   trigger.addEventListener("click", hideModal);
-});
-
-//écouteur d'événement sur le bouton "Ajouter" pour afficher la modal
-modalBtn.addEventListener("click", function () {
-  showModal();
-  // Réinitialiser les champs du formulaire
-  document.querySelector("#form").reset();
 });
 
 //écouteur d'événement sur le bouton "Ajouter" pour réafficher la modal
