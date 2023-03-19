@@ -26,66 +26,73 @@
       </ul>
     </nav>
 
-    <h2>Tâches à faire</h2>
-    <section>
-      <button id="add-btn" class="modal-btn modal-trigger">+</button>
-      <div class="sous-tache">
-        <div id="task-container" class="gauche">
-          <div class="modal-container">
-            <div class="overlay modal-trigger"></div>
-            <div class="modal">
-              <button id="submit" class="close-modal modal-trigger">OK</button>
-              <form name="form" id="form" class="form-container">
-                <input
-                  tabindex="0"
-                  type="text"
-                  id="todoInput"
-                  placeholder="A Faire"
-                  value=""
-                />
-                <input
-                  tabindex="1"
-                  type="date"
-                  id="date"
-                  name="date"
-                  placeholder="Echéance"
-                  value=""
-                />
-                <textarea
-                  id="description"
-                  name="Description"
-                  placeholder="Description"
-                  rows="8"
-                  cols="30"
-                ></textarea>
-              </form>
+    <div id="allTask">
+      <div id="section1">
+        <h2>Tâches à faire</h2>
+        <section>
+          <button id="add-btn" class="modal-btn modal-trigger">+</button>
+          <div class="sous-tache">
+            <div id="task-container" class="gauche">
+              <div class="modal-container">
+                <div class="overlay modal-trigger"></div>
+                <div class="modal">
+                  <button id="submit" class="close-modal modal-trigger">
+                    OK
+                  </button>
+                  <form name="form" id="form" class="form-container">
+                    <input
+                      tabindex="0"
+                      type="text"
+                      id="todoInput"
+                      placeholder="A Faire"
+                      value=""
+                    />
+                    <input
+                      tabindex="1"
+                      type="date"
+                      id="date"
+                      name="date"
+                      placeholder="Echéance"
+                      value=""
+                    />
+                    <textarea
+                      id="description"
+                      name="Description"
+                      placeholder="Description"
+                      rows="8"
+                      cols="30"
+                    ></textarea>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
+        </section>
+      </div>
+      <div class="grid">
+        <div id="section2">
+          <h2>Tâches en cours</h2>
+          <section class="section">
+            <!-- <div class="gauche colonne">
+                <div class="bouton2">
+                  <p>⚠</p>
+                </div> -->
+            <div class="sous-tache">
+              <div id="task-container" class="gauche"></div>
+            </div>
+          </section>
+        </div>
+        <div id="section3">
+          <h2>Tâches terminées</h2>
+          <section class="section">
+            <div class="sous-tache">
+              <div id="task-container" class="gauche"></div>
+              <button id="supp-task">-</button>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
-    <!-- <div class="gg-close"></div> -->
-
-    <h2>Tâches en cours</h2>
-    <section>
-      <!-- <div class="gauche colonne">
-          <div class="bouton2">
-            <p>⚠</p>
-          </div> -->
-      <div class="sous-tache">
-        <div id="task-container" class="gauche"></div>
-      </div>
-    </section>
-
-    <h2>Tâches terminées</h2>
-    <section>
-		<button id="supp-task">-</button>
-      <!-- <div class="gauche colonne"> -->
-        <div class="sous-tache">
-          <div id="task-container" class="gauche"></div>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <footer>
       <p>© MAAC - 2023</p>
