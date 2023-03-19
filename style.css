@@ -87,7 +87,9 @@ div .bouton p {
 	justify-content: space-between;
 	align-items: center;
 }
-
+.sup-active {
+	display: none;
+}
 @media screen and (min-width: 600px) {
 	nav h1 {
 		justify-content: space-around;
