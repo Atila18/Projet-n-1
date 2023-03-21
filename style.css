@@ -59,12 +59,32 @@ h2 {
 }
 
 footer {
-  background-color: #e8e2da;
-  padding: 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  font-size: larger;
+	background-color: #e8e2da;
+	padding: 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-size: larger;
+}
+div .bouton2 p {
+	display: none;
+}
+div .bouton {
+	display: flex;
+	border-radius: 100%;
+	background-color: #c8bcab;
+	color: white;
+	width: 42px;
+	height: 42px;
+	transform: translate(-50%, -50%);
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 0;
+}
+div .bouton p {
+	font-size: 1.25rem;
 }
 
 .sous-tache {
