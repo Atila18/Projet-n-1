@@ -5,20 +5,23 @@ const modalTrigger = document.querySelectorAll(".modal-trigger");
 const modalBtn = document.querySelector(".modal-btn");
 const closeBtn = document.querySelector(".close-modal");
 
+// const modalContainer = document.querySelector(".modal-container").style.display = "none";
+
 // Fonction pour afficher la modal
 function showModal() {
   modalContainer.style.display = "block";
 }
-
 // Fonction pour masquer la modal
 function hideModal() {
   modalContainer.style.display = "none";
 }
 
-//
 // Faire apparaitre les valeurs du Form dans le HTML
 const form = document.querySelector("#form");
 const taskContainer = document.querySelector("#task-container");
+const modalForm = (document.querySelector("#modal-container").style.display =
+  "none");
+
 // const modalContainer = document.querySelector(".modal-container");
 
 function addTask(event) {
@@ -57,11 +60,6 @@ function addTask(event) {
     deleteBtn.classList.add("gg-close");
     taskDiv.appendChild(deleteBtn);
 
-    //ajouter une checkbox de transition de tache
-    const checkbox = document.createElement("input");
-    checkbox.classList.add("checkbox");
-    taskDiv.appendChild(checkbox);
-
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
 
@@ -69,15 +67,6 @@ function addTask(event) {
     deleteBtn.addEventListener("click", function () {
       taskDiv.remove();
     });
-
-    //ecouteur pour changer l'emplacement après checkbox
-    // checkbox.addEventListener("click", function () {
-    //   const taskEncours = document.querySelector("#task-en-cours");
-    //   taskEncours.appendChild(addTask);
-    // });
-    // if (document.getElementById("taskDiv").checked === true) {
-    //   const taskEncours = document.querySelector("#task-en-cours");
-    //   taskEncours.appendChild(addTask);
   }
 }
 
@@ -105,4 +94,3 @@ modalTrigger.forEach(function (trigger) {
 document.querySelector(".modal-btn").addEventListener("click", function () {
   showModal();
 });
-
