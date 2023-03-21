@@ -36,7 +36,7 @@ function addTask(event) {
 
     // Ajoute les valeurs des champs du formulaire à la nouvelle div
 
-    const newTodo = document.createElement("h2");
+    const newTodo = document.createElement("h3");
     newTodo.innerHTML = todoInputValue;
     newTodo.classList.add("newTodo");
     taskDiv.appendChild(newTodo);
@@ -57,10 +57,6 @@ function addTask(event) {
     deleteBtn.classList.add("gg-close");
     taskDiv.appendChild(deleteBtn);
 
-    //ajouter une checkbox de transition de tache
-    const checkbox = document.createElement("input");
-    checkbox.classList.add("checkbox");
-    taskDiv.appendChild(checkbox);
 
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
@@ -70,19 +66,9 @@ function addTask(event) {
       taskDiv.remove();
     });
 
-    //ecouteur pour changer l'emplacement après checkbox
-    // checkbox.addEventListener("click", function () {
-    //   const taskEncours = document.querySelector("#task-en-cours");
-    //   taskEncours.appendChild(addTask);
-    // });
-    // if (document.getElementById("taskDiv").checked === true) {
-    //   const taskEncours = document.querySelector("#task-en-cours");
-    //   taskEncours.appendChild(addTask);
   }
 }
 
-//
-//
 //écouteur d'événement sur le bouton "Ajouter" pour afficher la modal
 modalBtn.addEventListener("click", function () {
   showModal();

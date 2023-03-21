@@ -64,11 +64,11 @@ textarea {
 /* Btn = ajout de tache */
 #add-btn {
   width: 12%;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   left: 2%;
-  top: 22%;
-  padding: 10px 14px;
+  top: 19%;
+  padding: 10px;
   font-size: 24px;
   font-weight: bolder;
   margin: 2px;
@@ -85,7 +85,7 @@ textarea {
   position: absolute;
   z-index: 1;
   left: 2%;
-  bottom: 22%;
+  bottom: 16%;
   padding: 10px 14px;
   font-size: 24px;
   font-weight: bolder;
@@ -100,7 +100,6 @@ textarea {
 section {
   display: flex;
 }
-
 
 /* LE MODAL */
 /* la taille */
@@ -130,8 +129,8 @@ section {
 /* style du MODAL*/
 .modal {
   width: 70%;
-  max-width: 400px;
-  min-width: 200px;
+  max-width: 600px;
+  min-width: 300px;
   padding: 12px;
   background: #fff;
   border-radius: 5px;
@@ -221,7 +220,7 @@ input.checkbox {
   cursor: pointer;
 }
 
-.task-container > h2,
+.task-container > h3,
 p {
   font-size: 16px;
   height: 20%;
@@ -246,12 +245,13 @@ p {
 
   /* Btn = ajout de tache */
   section #add-btn {
-    position: absolute;
+    position: fixed;
     width: 4%;
-    left: 13%;
+    left: 12.9%;
     top: 28%;
     padding: 0px 0px;
     font-size: 45px;
+    z-index: 20;
   }
 
   /* Btn = supp tache terminées */
