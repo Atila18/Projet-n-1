@@ -57,6 +57,11 @@ function addTask(event) {
     deleteBtn.classList.add("gg-close");
     taskDiv.appendChild(deleteBtn);
 
+    //ajouter une checkbox de transition de tache
+    const checkbox = document.createElement("input");
+    checkbox.classList.add("checkbox");
+    taskDiv.appendChild(checkbox);
+
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
 
@@ -64,6 +69,15 @@ function addTask(event) {
     deleteBtn.addEventListener("click", function () {
       taskDiv.remove();
     });
+
+    //ecouteur pour changer l'emplacement après checkbox
+    // checkbox.addEventListener("click", function () {
+    //   const taskEncours = document.querySelector("#task-en-cours");
+    //   taskEncours.appendChild(addTask);
+    // });
+    // if (document.getElementById("taskDiv").checked === true) {
+    //   const taskEncours = document.querySelector("#task-en-cours");
+    //   taskEncours.appendChild(addTask);
   }
 }
 
