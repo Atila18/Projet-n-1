@@ -1,74 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Projet n°1</title>
-		<link rel="stylesheet" href="style.css" />
-		<!-- Lien vers CSS croix supprimer -->
-		<link rel="stylesheet" href="gg-close.css" />
-	</head>
-	<body>
-		<nav>
-			<h1>To Do List</h1>
-			<ul>
-				<li>
-					<a href="connexion">Connexion</a>
-				</li>
-				<li>
-					<a href="contact">Contact</a>
-				</li>
-				<li>
-					<a href="enregistrer">S'enregistrer</a>
-				</li>
-			</ul>
-		</nav>
-			<h2>Tâches à faire</h2>
-			<div class="gauche">
-				<div class="bouton">
-					<p>+</p>
-				</div>
-				<div class="sous-tache">
-					<p>Tâche n°1</p>
-					<div class="gg-close"></div>
-				</div>
-				<div class="sous-tache">
-					<p>Tâche n°2</p>
-					<div class="gg-close"></div>
-				</div>
-				<div class="sous-tache">
-					<p>Tâche n°3</p>
-					<div class="gg-close"></div>
-				</div>
-			</div>
-				<div class="grid">
-					<section>
-						<h2>Tâches en cours</h2>
-						<div class="gauche colonne">
-							<div class="bouton2">
-								<p>⚠</p>
-							</div>
-							<div class="sous-tache">
-								<p>Tâche n°4</p>
-								<div class="gg-close"></div>
-							</div>
-						</div>
-					</section>
-					<section>
-						<h2>Tâches terminées</h2>
-						<div class="gauche colonne">
-							<div class="bouton">
-								<p>-</p>
-							</div>
-							<div class="sous-tache">
-								<p>Tâche n°6</p>
-							</div>
-						</div>
-					</section>
-		<footer>
-			<p>© MAAC - 2023</p>
-		</footer>
-		<script src="script.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet n°1</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Lien vers CSS croix supprimer -->
+    <link rel="stylesheet" href="gg-close.css" />
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>To Do List</h1>
+      <ul>
+        <li>
+          <a href="connexion">Connexion</a>
+        </li>
+        <li>
+          <a href="contact">Contact</a>
+        </li>
+        <li>
+          <a href="enregistrer">S'enregistrer</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="allTask">
+      <div id="section1">
+        <h2>Tâches à faire</h2>
+        <section>
+          <button id="add-btn" class="modal-btn modal-trigger">+</button>
+          <div class="sous-tache">
+            <div id="task-container" class="gauche">
+              <div class="modal-container">
+                <div class="overlay modal-trigger"></div>
+                <div class="modal">
+                  <button id="submit" class="close-modal modal-trigger">
+                    OK
+                  </button>
+                  <form name="form" id="form" class="form-container">
+                    <input
+                      tabindex="0"
+                      type="text"
+                      id="todoInput"
+                      placeholder="A Faire"
+                      value=""
+                    />
+                    <input
+                      tabindex="1"
+                      type="date"
+                      id="date"
+                      name="date"
+                      placeholder="Echéance"
+                      value=""
+                    />
+                    <textarea
+                      id="description"
+                      name="Description"
+                      placeholder="Description"
+                      rows="8"
+                      cols="30"
+                    ></textarea>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="grid">
+        <div id="section2">
+          <h2>Tâches en cours</h2>
+          <section class="section">
+            <!-- <div class="gauche colonne">
+                <div class="bouton2">
+                  <p>⚠</p>
+                </div> -->
+            <div class="sous-tache">
+              <div id="task-en-cours" class="gauche"></div>
+            </div>
+          </section>
+        </div>
+        <div id="section3">
+          <h2>Tâches terminées</h2>
+          <section class="section">
+            <div class="sous-tache">
+              <div id="task-finish" class="gauche"></div>
+              <button id="supp-task">-</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© MAAC - 2023</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="form.js"></script>
+  </body>
 </html>
+
