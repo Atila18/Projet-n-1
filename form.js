@@ -91,3 +91,4 @@ modalTrigger.forEach(function (trigger) {
 document.querySelector(".modal-btn").addEventListener("click", function () {
   showModal();
 });
+

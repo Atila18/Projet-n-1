@@ -5,3 +5,4 @@ const deleteBtn = document.querySelector(".gg-close");
 deleteBtn.addEventListener("click", function () {
   taskDiv.remove();
 });
+
