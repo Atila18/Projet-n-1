@@ -1,10 +1,11 @@
 // Bouton supprimer
-const supprimer = document.querySelector(".sup");
-const enlever = document.querySelector(".supp");
-const confirmer = document.querySelector(".confirmer");
+const suppress = document.querySelector("#supp-task");
 
-confirmer.addEventListener("click", function () {
-  let = confirm("Êtes-vous sûr de vouloir supprimer?");
-  supprimer.remove();
-  enlever.remove();
+suppress.addEventListener("click", function () {
+  if (confirm("Êtes-vous sûr de vouloir supprimer?")) {
+    const taskDelete = document.querySelectorAll(".done");
+    for (let i = 0; i < taskDelete.length; i++) {
+      taskDelete[i].remove();
+    }
+  }
 });
