@@ -23,47 +23,68 @@ const taskContainer = document.querySelector("#task-container");
 
 function addTask(event) {
   event.preventDefault();
-
+  
   // Récupère les valeurs des champs du formulaire
   const todoInputValue = document.querySelector("#todoInput").value;
   const dateValue = document.querySelector("#date").value;
   const descriptionValue = document.querySelector("#description").value;
-
+  
   if ((todoInputValue && dateValue) || descriptionValue) {
+    
     //Nouvelle div pour la tâche
     const taskDiv = document.createElement("div");
-    taskDiv.classList.add("task-container");
-
+    taskDiv.classList.add("task-container", "to-do-task");
+    
     // Ajoute les valeurs des champs du formulaire à la nouvelle div
-
+    
     const newTodo = document.createElement("h2");
     newTodo.innerHTML = todoInputValue;
     newTodo.classList.add("newTodo");
     taskDiv.appendChild(newTodo);
-
+    
     const newDate = document.createElement("p");
     newDate.innerHTML = dateValue;
     newDate.classList.add("newDate");
     taskDiv.appendChild(newDate);
-
+    
     const newDescription = document.createElement("p");
     newDescription.innerHTML = descriptionValue;
     newDescription.classList.add("newDescription");
     taskDiv.appendChild(newDescription);
-
-    // Ajouter un bouton de suppression pour la nouvelle tâche créée
+    
+    // // Crée et affiche la coche de transition de tâche
+    const checkBtn = document.createElement("button");
+    checkBtn.classList.add("gg-check");
+    taskDiv.appendChild(checkBtn);
+    
+    // // Crée et affiche le bouton de suppression pour la nouvelle tâche créée
+    // // deleteBtn.innerHTML = ""; >>>>>>>>>> ligne superflue : c'est "deleteBtn.addEventListener", plus bas, qui efface la tâche
     const deleteBtn = document.createElement("button");
-    deleteBtn.innerHTML = "";
     deleteBtn.classList.add("gg-close");
     taskDiv.appendChild(deleteBtn);
 
-    //ajouter une checkbox de transition de tache
-    const checkbox = document.createElement("input");
-    checkbox.classList.add("checkbox");
-    taskDiv.appendChild(checkbox);
+    // //ajouter une checkbox de transition de tache
+    // const checkbox = document.createElement("input");
+    // checkbox.classList.add("checkbox");
+    // taskDiv.appendChild(checkbox);
+    // >>>>>>>>>> remplacé par "ajouter une coche de tranition de tâche", qqs lignes + haut
 
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
+
+    //Ecouteur d'évènement coche de chaque tâche + déplacer la tâche "à faire" vers "en cours" OU d' "en cours" vers "terminée"
+    const taskEnCours = document.querySelector("#task-en-cours");
+    const taskFinish = document.querySelector("#task-finish");
+    checkBtn.addEventListener("click", function (){
+      if (taskDiv.className === "task-container to-do-task") {
+        taskDiv.classList.replace("to-do-task", "in-progress");
+        taskEnCours.appendChild(taskDiv);
+        } else if (taskDiv.className === "task-container in-progress") {
+          taskDiv.classList.replace("in-progress", "done");
+          checkBtn.style.display = 'none';
+          taskFinish.appendChild(taskDiv);
+        }
+      });
 
     //ecouteur d'event pour le bouton supp
     deleteBtn.addEventListener("click", function () {
@@ -78,6 +99,7 @@ function addTask(event) {
     // if (document.getElementById("taskDiv").checked === true) {
     //   const taskEncours = document.querySelector("#task-en-cours");
     //   taskEncours.appendChild(addTask);
+    // >>>>>>>>>> Géré plus haut avec "écouteur d'évent coche de déplacement [...]"
   }
 }
 
