@@ -19,4 +19,6 @@ toggle.addEventListener('click', function() {
     });
 
     const connexionOnOff = "";
-    /** créer alerte pour connexion quand click sur lien **/
+   
+
+   
