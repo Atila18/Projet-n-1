@@ -44,15 +44,18 @@ div.gauche {
 h2 {
   position: relative;
   text-align: right;
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: lighter;
   margin-right: 8%;
-  bottom: -72px;
+  bottom: -74px;
   font-family: var(--policeh2);
   z-index: 1;
+  color: #9e846a;
 }
 
 h3 {
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
 footer {
