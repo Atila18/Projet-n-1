@@ -224,7 +224,7 @@ p {
 
 @media screen and (min-width: 600px) {
   .gg-close {
-    grid-column: 5/6;
+    grid-column: 3/4;
     grid-row: 1/2;
     padding: 0px 0px;
     margin-left: 80%;

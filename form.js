@@ -24,73 +24,85 @@ function addTask(event) {
   const todoInputValue = document.querySelector("#todoInput").value;
   const dateValue = document.querySelector("#date").value;
   const descriptionValue = document.querySelector("#description").value;
-  if ((todoInputValue && dateValue) || descriptionValue) {
+  if (todoInputValue && dateValue) {
     //Nouvelle div pour la tâche
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-container");
+
     // Ajoute les valeurs des champs du formulaire à la nouvelle div
     const newTodo = document.createElement("h3");
     newTodo.innerHTML = todoInputValue;
     newTodo.classList.add("newTodo");
     taskDiv.appendChild(newTodo);
+
     const newDate = document.createElement("p");
-    newDate.innerHTML = dateValue;
+    newDate.innerHTML = Date.parse(dateValue);
     newDate.classList.add("newDate");
     taskDiv.appendChild(newDate);
+
+    // Ajoute date échéance masquée
+    newDate.dataset.deadLine = dateValue;
+    getChrono(newDate);
+
     const newDescription = document.createElement("p");
     newDescription.innerHTML = descriptionValue;
     newDescription.classList.add("newDescription");
     taskDiv.appendChild(newDescription);
+
     // Ajouter un bouton de suppression pour la nouvelle tâche créée
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("gg-close");
     taskDiv.appendChild(deleteBtn);
+
     // Ajoute la nouvelle div à la div taskContainer
     taskContainer.appendChild(taskDiv);
+
     //ecouteur d'event pour le bouton supp
     deleteBtn.addEventListener("click", function () {
       taskDiv.remove();
-    }); 
+    });
 
+    // décompte date priorité et couleur
 
-    /** décompte date priorité et couleur **/
+    function getChrono(dateElement) {
+      const now = new Date().getTime();
+      const countdownDate = new Date(dateElement.dataset.deadLine).getTime();
+      const distanceBase = countdownDate - now;
+      const days = Math.floor(distanceBase / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distanceBase % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (distanceBase % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((distanceBase % (1000 * 60)) / 1000);
+      determinePriority(distanceBase, dateElement);
+      dateElement.innerHTML = `Il reste ${days}j ${hours}h ${minutes}m ${seconds}s`;
+    }
 
-  const text = document.querySelector(".newDate");
-  function getChrono() {
-  const now = new Date().getTime();
-  const countdownDate = new Date(document.querySelector("#date").value).getTime();
-  const distanceBase = countdownDate - now;
-  const days = Math.floor(distanceBase / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distanceBase % (1000 * 60 * 60 * 24))/(1000 * 60 * 60))
-  const minutes = Math.floor((distanceBase % (1000 * 60 * 60))/(1000 * 60))
-  const seconds = Math.floor((distanceBase % (1000 * 60))/ 1000);
+    const countDownInterval = setInterval(() => {
+      const dateElements = document.querySelectorAll(".newDate");
 
-  text.innerText = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+      for (let i = 0; i < dateElements.length; i++) {
+        getChrono(dateElements[i]);
+      }
+    }, 1000);
+    function determinePriority(diff, element) {
+      const priority = element;
 
-  determinePriority(distanceBase);
-}
-getChrono();
-
-const countDownInterval = setInterval(() => {
-  getChrono();
-}, 1000);
-function determinePriority(diff) {
-  const priority = text;
-
-  if (diff < 0) {
-    priority.style.color = "#a8a8a8";
-  } else if (diff < 86400000) {
-    priority.style.color = 'red';
-  } else if (diff < 604800000) {
-    priority.style.color = 'orange';
-  } else {
-    priority.style.color = 'green';
+      if (diff < 0) {
+        priority.innerHTML = "#a8a8a8";
+      } else if (diff < 86400000) {
+        priority.style.color = "red";
+      } else if (diff < 604800000) {
+        priority.style.color = "orange";
+      } else {
+        priority.style.color = "green";
+      }
+    }
   }
-};
-  }
 }
-//
-//
+
 //écouteur d'événement sur le bouton "Ajouter" pour afficher la modal
 modalBtn.addEventListener("click", function () {
   showModal();
