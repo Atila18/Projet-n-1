@@ -93,7 +93,9 @@ div .bouton p {
   display: flex;
   flex-direction: column;
 }
-
+.sup-active {
+	display: none;
+}
 @media screen and (min-width: 600px) {
   nav h1 {
     justify-content: space-around;
