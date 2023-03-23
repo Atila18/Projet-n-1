@@ -6,34 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projet n°1</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="form.css" />
-    <!-- Lien vers CSS coche déplacement et croix supprimer -->
+    <!-- Lien vers CSS croix supprimer -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  /> 
     <link rel="stylesheet" href="gg-check-and-close.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="styleburger.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Kristi&family=My+Soul&family=Petemoss&family=Quicksand:wght@300&display=swap"
+    rel="stylesheet"
+  />
   </head>
-  <body>
-    <nav>
-      <h1>To Do List</h1>
-      <ul>
+  <body>    <header>
+    <nav> 
+      <img src="logotodolist3.png" alt="logo" class="logo"></img>
+      <h1><a href="/index.html">To Do List</a></h1>
+      <div class="toggle">
+        <i class="fas fa-bars ouvrir"></i> <i class="fas fa-times fermer"></i>
+      </div>
+      <ul class="menu">
         <li>
-          <a href="connexion">Connexion</a>
+          <button class="btn">
+            <a href="connexion">Connexion</a>
+          </button>
         </li>
         <li>
-          <a href="contact">Contact</a>
+          <button class="btn">
+            <a href="enregistrer">S'enregistrer</a>
+          </button>
         </li>
         <li>
-          <a href="enregistrer">S'enregistrer</a>
+          <button class="btn">
+            <a href="/burgercontact.html">Contact</a>
+          </button>
         </li>
       </ul>
     </nav>
+  </header>
 
     <div id="allTask">
       <div id="section1">
         <h2>Tâches à faire</h2>
         <section>
-          <button id="add-btn" class="modal-btn modal-trigger">+</button>
+          
           <div class="sous-tache">
             <div id="task-container" class="gauche">
-              <div class="modal-container">
+              <div id="modal-container" class="modal-container">
                 <div class="overlay modal-trigger"></div>
                 <div class="modal">
                   <button id="submit" class="close-modal modal-trigger">
@@ -66,7 +89,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div><button id="add-btn" class="modal-btn modal-trigger">+</button>
         </section>
       </div>
       <div class="grid">
@@ -100,5 +123,7 @@
 
     <script src="script.js"></script>
     <script src="form.js"></script>
+    <script src="scriptburger.js"></script>
   </body>
 </html>
+
