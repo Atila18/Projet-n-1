@@ -197,7 +197,7 @@ p.newDate {
   word-wrap: break-word;
 }
 
-.gg-close {
+.gg-close, .gg-check {
   margin-top: auto;
   margin-left: auto;
   margin-right: 8px;
