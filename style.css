@@ -16,9 +16,6 @@ body {
   --couleurprincipale: #e8e2da;
   --couleurtransparence: rgb(255, 255, 255, 0.3);
   --couleurboutons: #c8bcab;
-  --couleurpriorite1: #ebabab;
-  --couleurpriorite2: #f8ecb0;
-  --couleurpriorite3: #cbf2cf;
   --couleurtextebtn: white;
   --policeh2: "Kristi";
 }
@@ -120,8 +117,8 @@ div .bouton p {
   }
 
   div.gauche {
-    min-height: 12rem;
-    max-height: 12rem;
+    min-height: 35vh;
+    max-height: 35vh;
     border-radius: 8px;
     padding: 1rem 1rem 1rem 2rem;
     overflow: auto;
